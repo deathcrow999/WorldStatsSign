@@ -1,1 +1,5 @@
-
+Name: WorldStatsSign
+Author: LiveWireTech
+Version:1.0.0
+API: [1.10.0]
+Description: Display world and how many players are in the world
