@@ -20,9 +20,17 @@ class Main extends PluginBase{
  
         public function onEnable(){
                 $this->getLogger()->info("WorldStatsSign has been enabled");
-                $this->getServer()->getPluginManager()->registerEvents($this,$this);
+         if(!is_dir($this->getDataFolder())){
+            @mkdir($this->getDataFolder());
+            
         }
- 
+        $this->saveResource("config.yml");
+
+        $this->config = new Config($this->getDataFolder()."config.yml",Config::YAML);
+
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
+
+
                 public function onDisable() {
                                 $this->getLogger()->info("WorldStatsSign has been disabled");
         }
